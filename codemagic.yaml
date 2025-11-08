@@ -1,3 +1,4 @@
+
 workflows:
   android-build:
     name: Build Android APK
@@ -6,8 +7,7 @@ workflows:
       vars:
         ANDROID_HOME: /opt/android-sdk-linux
       java: 17
-      android:
-        image: latest
+    instance_type: mac_mini_m1
     scripts:
       - name: Clean project
         script: ./gradlew clean
