@@ -1,0 +1,17 @@
+workflows:
+  android-build:
+    name: Build Android APK
+    max_build_duration: 60
+    environment:
+      vars:
+        ANDROID_HOME: /opt/android-sdk-linux
+      java: 17
+      android:
+        image: latest
+    scripts:
+      - name: Clean project
+        script: ./gradlew clean
+      - name: Build debug APK
+        script: ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/**/*.apk
