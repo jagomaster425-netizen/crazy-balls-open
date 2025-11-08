@@ -1,0 +1,2 @@
+rootProject.name = 'crazy-balls-advanced'
+include ':app'
